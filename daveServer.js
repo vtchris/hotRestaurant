@@ -21,7 +21,9 @@ function Waitlist(Name, Phone, Email, ID) {
     this.customerID = ID
 }
 
+var reservationsArr = []
 
+reservationsArr.push(new Reservations("Dave Test", "4103335555", "davey@dave.com", "1"))
 
 app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "home.html"));

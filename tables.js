@@ -1,3 +1,3 @@
-let reservations = require ("./daveServer");
+let reservations = require ("./server");
 
-console.log(reservations[0].customerName)
+console.log(reservations)

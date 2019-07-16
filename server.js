@@ -2,8 +2,8 @@ var express = require("express");
 var path = require("path");
 var PORT = process.env.PORT || 3000;
 var app = express();
-var reservations = [];
-var waitlist = [];
+let tabledata = require("./api/tabledata")
+let waitjson = require("./api/waitdata")
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -18,6 +18,13 @@ app.get("/tables", function(req,res){
 app.get("/reserve", function(req,res){
     res.sendFile(path.join(__dirname, "reserve.html"));
 })
+app.get("/api/tablesdata", function(req,res) {
+    return res.json(tabledata)
+})
+app.get("/api/waitsdata", function(req,res) {
+    return res.json(waitjson)
+})
+
 app.post("/api/new", function(req,res){
 
     let currentRes = new Reservation(req.body.customerName,req.body.phoneNumber,req.body.customerEmail,req.body.customerID);
@@ -32,7 +39,6 @@ app.post("/api/new", function(req,res){
         
     console.log(reservations);
     console.log(waitlist);
-    
 })
 app.listen(PORT,function(){
     console.log("Listening to PORT " + PORT)

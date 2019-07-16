@@ -2,7 +2,7 @@
   "name": "hotrestaurant",
   "version": "1.0.0",
   "description": "Hot Restaurant App",
-  "main": "index.js",
+  "main": "server.js",
   "dependencies": {
     "express": "^4.17.1",
     "path": "^0.12.7",
@@ -10,7 +10,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    
   },
   "repository": {
     "type": "git",

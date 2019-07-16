@@ -29,16 +29,16 @@ app.post("/api/new", function(req,res){
 
     let currentRes = new Reservation(req.body.customerName,req.body.phoneNumber,req.body.customerEmail,req.body.customerID);
     
-    if(reservations.length < 5){
-        reservations.push(currentRes);
+    if(tabledata.length < 5){
+        tabledata.push(currentRes);
         res.send(true);
     }else{
-        waitlist.push(currentRes);
+        waitjson.push(currentRes);
         res.send(false);
     }
         
-    console.log(reservations);
-    console.log(waitlist);
+    console.log(tabledata);
+    console.log(waitjson);
 })
 app.listen(PORT,function(){
     console.log("Listening to PORT " + PORT)

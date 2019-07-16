@@ -1,0 +1,3 @@
+var reservations = [];
+
+exports = reservations;

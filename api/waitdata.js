@@ -1,3 +1,3 @@
-let waitlist = [];
+var waitlist = [];
 
-exports = waitlist;
+module.exports = waitlist;

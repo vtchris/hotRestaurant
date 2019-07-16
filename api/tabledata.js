@@ -1,3 +1,3 @@
 var reservations = [];
 
-exports = reservations;
+module.exports = reservations;
